@@ -1,0 +1,33 @@
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+<<<<<<< HEAD
+flask-socketio
+eventlet
+
+requests
+Pillow
+opencv-python
+
+torch
+transformers
+
+gunicorn
+pywebpush
+cryptography
+
+python-dotenv
+google-generativeai
+PyJWT
+bcrypt
+psycopg2-binary
+PyJWT
+=======
+requests
+Pillow
+torch
+transformers
+opencv-python
+gunicorn
+requests
+>>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

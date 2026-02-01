@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.backend/venv/
+
+# ML / Torch / CV
+*.pt
+*.pth
+*.onnx
+*.dll
+*.so
+
+# Node / build
+node_modules/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
