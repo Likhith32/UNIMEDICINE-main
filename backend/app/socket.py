@@ -1,6 +1,6 @@
 from flask_socketio import SocketIO, emit, join_room
 from app.database.db import db
-from app.models.message import Message
+from app.models import Message
 from app.services.notification_service import send_push_to_user
 
 socketio = SocketIO(

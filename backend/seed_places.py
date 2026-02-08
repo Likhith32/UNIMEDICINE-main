@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 from app import create_app
 from app.database.db import db
 from app.models.place import Place
 
-# ================== CONFIG ================== #
 
 DEFAULT_HOSTEL = "Boys Hostel 1"
 
@@ -14,7 +12,6 @@ ALLOWED_HOSTELS = {
     "Girls Hostel 2",
 }
 
-# ================== NORMALIZERS ================== #
 
 def normalize_type(value: str) -> str:
     v = value.strip().lower()
@@ -45,10 +42,8 @@ def normalize_str(value):
     return value.strip() if isinstance(value, str) else value
 
 
-# ================== RAW DATA ================== #
 
 RAW_PLACES = [
-    # ================== HOSPITALS ================== #
     {
         "name": "Venkata Padma Hospital",
         "type": "HOSPITAL",
@@ -150,7 +145,6 @@ RAW_PLACES = [
         "longitude": 83.445320,
     },
 
-    # ================== MEDICAL SHOPS ================== #
     {
         "name": "Apollo Pharmacy - MG Road",
         "type": "MEDICAL_SHOP",
@@ -204,7 +198,6 @@ RAW_PLACES = [
 ]
 
 
-# ================== SEED LOGIC ================== #
 
 def seed_places(clear_existing=True):
     if clear_existing:
@@ -235,13 +228,11 @@ def seed_places(clear_existing=True):
     print(f"✅ Seed completed: {created} places inserted")
 
 
-# ================== ENTRY POINT ================== #
 
 if __name__ == "__main__":
     app = create_app()              # ✅ create Flask app
     with app.app_context():         # ✅ push app context
         seed_places(clear_existing=True)
-=======
 DEFAULT_HOSTEL = "Boys Hostel 1"
 
 
@@ -423,4 +414,3 @@ def get_seed_places():
             "longitude": 83.3965,
         },
     ]
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

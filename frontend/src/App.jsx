@@ -19,11 +19,8 @@ import NearbyPlaces from "./pages/NearbyPlaces";
 import ImageDiagnosis from "./pages/ImageDiagnosis";
 import DoctorConnect from "./pages/DoctorConnect";
 import DoctorDashboard from "./pages/DoctorDashboard";
-<<<<<<< HEAD
 
-=======
 import SmartOTC from "./pages/SmartOTC";
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 
 import AppLoader from "./components/AppLoader"; // ⬅️ loader component
 
@@ -179,9 +176,7 @@ function App() {
             }
           />
 
-<<<<<<< HEAD
          
-=======
           <Route
             path="/smart-otc"
             element={
@@ -190,7 +185,6 @@ function App() {
               </ProtectedRoute>
             }
           />
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 
           <Route
             path="/nearby-places"

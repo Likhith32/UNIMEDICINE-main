@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-=======
 // src/pages/Dashboard.jsx
 
-import React, { useState } from "react";
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useUser } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +11,6 @@ const Dashboard = () => {
   const { studentProfile, isStudent } = useUser();
   const navigate = useNavigate();
   const [hoveredCard, setHoveredCard] = useState(null);
-<<<<<<< HEAD
   const [tapScale, setTapScale] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
@@ -28,8 +23,6 @@ const Dashboard = () => {
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 
   const handleGo = (path) => {
     navigate(path);
@@ -39,7 +32,6 @@ const Dashboard = () => {
     window.location.href = "tel:9392995909";
   };
 
-<<<<<<< HEAD
   const handleCardTap = (cardId, path) => {
     setTapScale(cardId);
     setTimeout(() => {
@@ -48,8 +40,6 @@ const Dashboard = () => {
     }, 150);
   };
 
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   const keyframeStyles = `
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
@@ -63,7 +53,6 @@ const Dashboard = () => {
       from { transform: translateY(-10px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
-<<<<<<< HEAD
     @keyframes sosPulse {
       0%, 100% { 
         box-shadow: 0 10px 35px rgba(239, 68, 68, 0.5);
@@ -333,11 +322,10 @@ const Dashboard = () => {
         title: "Manage Student Consultations",
         subtitle: "Respond to student queries and provide timely medical guidance. Your expertise helps students stay healthy and informed.",
         primaryCTA: { text: "View Consultations", path: "/doctor-dashboard", icon: "📋" },
-        secondaryCTA: null, // No secondary button for doctors
+        secondaryCTA: null,
       };
     }
     
-    // Student (default)
     return {
       title: "Your Health, One Click Away",
       subtitle: "Chat with AI, consult doctors, and find nearby medical help instantly. Expert care tailored just for you.",
@@ -399,13 +387,6 @@ const Dashboard = () => {
 
   return (
     <div style={styles.page}>
-=======
-  `;
-
-  return (
-    <div style={styles.page}>
-      {/* local animations */}
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
       <style>{keyframeStyles}</style>
 
       <header style={styles.header}>
@@ -417,11 +398,7 @@ const Dashboard = () => {
             </p>
           ) : role === "doctor" && user ? (
             <p style={styles.subtitle}>
-<<<<<<< HEAD
               Welcome, <strong>Dr. {user.name || user.email}</strong>
-=======
-              Welcome, <strong>{user.name || user.email}</strong>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
             </p>
           ) : (
             <p style={styles.subtitle}>Welcome to the telemedicine portal.</p>
@@ -429,7 +406,6 @@ const Dashboard = () => {
         </div>
       </header>
 
-<<<<<<< HEAD
       {/* Role-specific Hero Section */}
       <section style={styles.hero}>
         <div style={styles.heroContent}>
@@ -477,48 +453,6 @@ const Dashboard = () => {
                 {heroContent.secondaryCTA.text}
               </button>
             )}
-=======
-      <section style={styles.hero}>
-        <div style={styles.heroContent}>
-          <h1 style={styles.heroTitle}>Your Health, Our Priority.</h1>
-          <p style={styles.heroSubtitle}>
-            Expert care tailored just for you. Trusted by thousands, we provide compassionate
-            and advanced medical solutions to keep you well.
-          </p>
-          <div style={styles.heroButtons}>
-            <button
-              style={styles.bookButton}
-              onClick={() => handleGo("/doctor-connect")}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow =
-                  "0 15px 40px rgba(139, 92, 246, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 25px rgba(139, 92, 246, 0.4)";
-              }}
-            >
-              Book an Appointment
-            </button>
-
-            <button
-              style={styles.outlineButton}
-              onClick={() => handleGo("/ai")}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "rgba(124, 58, 237, 0.08)";
-                e.currentTarget.style.transform = "translateY(-3px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              Quick AI Check
-            </button>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
           </div>
         </div>
 
@@ -526,18 +460,13 @@ const Dashboard = () => {
           <div style={styles.imageWrapper}>
             <img
               src={heroDoctor || "/placeholder.svg"}
-<<<<<<< HEAD
               alt={role === "doctor" ? "Doctor managing consultations" : "Doctor providing online consultation"}
-=======
-              alt="Doctor providing online consultation"
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
               style={styles.doctorImage}
             />
           </div>
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* Features Section */}
       <section style={styles.featuresSection}>
         <div style={styles.sectionHeader}>
@@ -593,131 +522,6 @@ const Dashboard = () => {
               <p style={styles.cardText}>{card.text}</p>
             </div>
           ))}
-=======
-      <section style={styles.featuresSection}>
-        <div style={styles.grid}>
-          {isStudent && (
-            <>
-              {[
-                {
-                  id: "ai",
-                  title: "AI Symptom Checker",
-                  text: "Chat with the AI assistant about your symptoms.",
-                  path: "/ai",
-                },
-                {
-                  id: "nearby",
-                  title: "Nearby Medical Shops & Hospitals",
-                  text: "View medical shops and hospitals near your location.",
-                  path: "/nearby-places",
-                },
-                {
-                  id: "image",
-                  title: "Image-based Check",
-                  text: "Upload a skin image and let AI provide insights.",
-                  path: "/image-diagnosis",
-                },
-                {
-                  id: "doctor",
-                  title: "Chat with Doctors",
-                  text: "Start or continue a chat with campus doctors.",
-                  path: "/doctor-connect",
-                },
-              ].map((card) => (
-                <div
-                  key={card.id}
-                  style={{
-                    ...styles.cardItem,
-                    transform:
-                      hoveredCard === card.id
-                        ? "translateY(-8px) scale(1.02)"
-                        : "translateY(0) scale(1)",
-                    boxShadow:
-                      hoveredCard === card.id
-                        ? "0 20px 50px rgba(139, 92, 246, 0.25)"
-                        : "0 10px 30px rgba(0, 0, 0, 0.08)",
-                  }}
-                  onMouseEnter={() => setHoveredCard(card.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  onClick={() => handleGo(card.path)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && handleGo(card.path)}
-                  aria-label={card.title}
-                >
-                  <div style={styles.cardGradient} aria-hidden />
-                  <h3 style={styles.cardTitle}>{card.title}</h3>
-                  <p style={styles.cardText}>{card.text}</p>
-                  <button
-                    style={{
-                      ...styles.cardButton,
-                      backgroundColor:
-                        hoveredCard === card.id ? "#7c3aed" : "rgb(139, 92, 246)",
-                    }}
-                    aria-hidden
-                  >
-                    Learn More →
-                  </button>
-                </div>
-              ))}
-            </>
-          )}
-
-          {role === "doctor" && (
-            <>
-              {[
-                {
-                  id: "consultations",
-                  title: "Active Consultations",
-                  text: "View and reply to students who contacted you.",
-                  path: "/doctor-consultations",
-                },
-                {
-                  id: "profile",
-                  title: "Profile & Availability",
-                  text: "Update your specialization and timings.",
-                  path: "/doctor-profile",
-                },
-              ].map((card) => (
-                <div
-                  key={card.id}
-                  style={{
-                    ...styles.cardItem,
-                    transform:
-                      hoveredCard === card.id
-                        ? "translateY(-8px) scale(1.02)"
-                        : "translateY(0) scale(1)",
-                    boxShadow:
-                      hoveredCard === card.id
-                        ? "0 20px 50px rgba(139, 92, 246, 0.25)"
-                        : "0 10px 30px rgba(0, 0, 0, 0.08)",
-                  }}
-                  onMouseEnter={() => setHoveredCard(card.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  onClick={() => handleGo(card.path)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && handleGo(card.path)}
-                  aria-label={card.title}
-                >
-                  <div style={styles.cardGradient} aria-hidden />
-                  <h3 style={styles.cardTitle}>{card.title}</h3>
-                  <p style={styles.cardText}>{card.text}</p>
-                  <button
-                    style={{
-                      ...styles.cardButton,
-                      backgroundColor:
-                        hoveredCard === card.id ? "#7c3aed" : "rgb(139, 92, 246)",
-                    }}
-                    aria-hidden
-                  >
-                    View →
-                  </button>
-                </div>
-              ))}
-            </>
-          )}
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
         </div>
       </section>
 
@@ -730,7 +534,6 @@ const Dashboard = () => {
         onClick={handleSOS}
         title="Emergency call to campus doctor"
         aria-label="Emergency call"
-<<<<<<< HEAD
         onMouseEnter={(e) => {
           if (!isMobile) {
             e.currentTarget.style.transform = "scale(1.1)";
@@ -744,226 +547,9 @@ const Dashboard = () => {
       >
         <span style={{ fontSize: isMobile ? "1.2rem" : "1.5rem" }}>🚨</span>
         <span>SOS</span>
-=======
-      >
-        SOS
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
       </button>
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default Dashboard;
-=======
-const styles = {
-  page: {
-    minHeight: "100vh",
-    background: "linear-gradient(135deg, #f8fafc 0%, #f0e7ff 50%, #fef8e7 100%)",
-    padding: 0,
-    fontFamily:
-      "'Segoe UI', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif",
-  },
-
-  header: {
-    maxWidth: 1400,
-    margin: "2rem auto 2rem",
-    padding: "0 2rem",
-  },
-  headerContent: {
-    animation: "slideDown 0.6s ease-out",
-  },
-  title: {
-    margin: 0,
-    marginBottom: "0.35rem",
-    fontSize: "2.5rem",
-    background: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-    fontWeight: 800,
-  },
-  subtitle: {
-    margin: 0,
-    fontSize: "1.1rem",
-    color: "#64748b",
-    fontWeight: 500,
-  },
-
-  hero: {
-    display: "flex",
-    alignItems: "center",
-    maxWidth: 1400,
-    margin: "2rem auto",
-    gap: "4rem",
-    padding: "3rem",
-    background:
-      "linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(240, 231, 255, 0.85) 100%)",
-    borderRadius: 28,
-    boxShadow: "0 20px 60px rgba(139, 92, 246, 0.15)",
-    border: "1px solid rgba(139, 92, 246, 0.1)",
-  },
-  heroContent: {
-    flex: 1,
-    maxWidth: 600,
-  },
-  heroTitle: {
-    fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-    fontWeight: 800,
-    lineHeight: 1.08,
-    margin: "0 0 1.5rem 0",
-    background: "linear-gradient(135deg, #1e293b, #7c3aed)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-  },
-  heroSubtitle: {
-    fontSize: "1.15rem",
-    lineHeight: 1.8,
-    color: "#64748b",
-    marginBottom: "2.5rem",
-    fontWeight: 500,
-  },
-  heroButtons: {
-    display: "flex",
-    gap: "1rem",
-    flexWrap: "wrap",
-  },
-  bookButton: {
-    background: "linear-gradient(135deg, #8b5cf6, #a78bfa)",
-    color: "white",
-    border: "none",
-    padding: "1rem 2rem",
-    borderRadius: 12,
-    fontSize: "1rem",
-    fontWeight: 600,
-    cursor: "pointer",
-    boxShadow: "0 8px 25px rgba(139, 92, 246, 0.4)",
-    transition: "all 0.3s ease",
-  },
-  outlineButton: {
-    background: "transparent",
-    color: "#7c3aed",
-    border: "2px solid rgba(139, 92, 246, 0.4)",
-    padding: "1rem 2rem",
-    borderRadius: 12,
-    fontSize: "1rem",
-    fontWeight: 600,
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-  },
-  doctorImageContainer: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-  },
-  imageWrapper: {
-    position: "relative",
-    animation: "float 4s ease-in-out infinite",
-  },
-  doctorImage: {
-    width: 320,
-    height: 400,
-    borderRadius: 24,
-    boxShadow: "0 30px 60px rgba(139, 92, 246, 0.25)",
-    objectFit: "cover",
-    border: "2px solid rgba(139, 92, 246, 0.2)",
-  },
-
-  featuresSection: {
-    maxWidth: 1400,
-    margin: "3rem auto 2rem",
-    padding: "0 2rem",
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-    gap: "2rem",
-  },
-  cardItem: {
-    background:
-      "linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.8))",
-    borderRadius: 20,
-    border: "1px solid rgba(139, 92, 246, 0.15)",
-    padding: "2rem",
-    cursor: "pointer",
-    transition: "all 0.4s cubic-bezier(0.23, 1, 0.320, 1)",
-    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.08)",
-    backdropFilter: "blur(10px)",
-    position: "relative",
-    overflow: "hidden",
-  },
-  cardGradient: {
-    position: "absolute",
-    top: "-50%",
-    right: "-50%",
-    width: "200%",
-    height: "200%",
-    background:
-      "radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)",
-  },
-  cardTitle: {
-    margin: "0 0 0.75rem 0",
-    fontSize: "1.3rem",
-    color: "#1e293b",
-    fontWeight: 700,
-    position: "relative",
-    zIndex: 1,
-  },
-  cardText: {
-    margin: "0 0 1.5rem 0",
-    fontSize: "0.95rem",
-    color: "#64748b",
-    lineHeight: 1.6,
-    position: "relative",
-    zIndex: 1,
-  },
-  cardButton: {
-    padding: "0.8rem 1.6rem",
-    borderRadius: 10,
-    border: "none",
-    color: "#fff",
-    fontSize: "0.95rem",
-    cursor: "pointer",
-    fontWeight: 600,
-    boxShadow: "0 4px 15px rgba(139, 92, 246, 0.3)",
-    transition: "all 0.3s ease",
-    position: "relative",
-    zIndex: 1,
-  },
-
-  footerNote: {
-    textAlign: "center",
-    fontSize: "0.95rem",
-    color: "#64748b",
-    maxWidth: 900,
-    margin: "2rem auto",
-    padding: "1.5rem 2rem",
-    background: "rgba(255, 255, 255, 0.6)",
-    borderRadius: 12,
-    fontWeight: 500,
-    border: "1px solid rgba(139, 92, 246, 0.1)",
-  },
-
-  sosButton: {
-    position: "fixed",
-    bottom: "2rem",
-    left: "2rem",
-    background: "linear-gradient(135deg, #dc2626, #ef4444)",
-    color: "#fff",
-    border: "none",
-    borderRadius: "50%",
-    width: 70,
-    height: 70,
-    fontSize: 18,
-    fontWeight: 700,
-    boxShadow: "0 10px 35px rgba(239, 68, 68, 0.5)",
-    cursor: "pointer",
-    zIndex: 9999,
-    transition: "all 0.3s ease",
-    animation: "glow 2s ease-in-out infinite",
-  },
-};
-
-export default Dashboard;
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

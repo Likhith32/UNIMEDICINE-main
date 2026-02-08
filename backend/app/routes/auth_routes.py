@@ -2,7 +2,7 @@
 
 from flask import Blueprint, request, jsonify
 from datetime import datetime
-from app import db  # ✅ use the SAME db instance from app/__init__.py
+from app.database.db import db# ✅ use the SAME db instance from app/__init__.py
 from app.models.user import User
 from app.models.doctor import Doctor
 from app.utils.security import create_access_token, verify_password, decode_access_token

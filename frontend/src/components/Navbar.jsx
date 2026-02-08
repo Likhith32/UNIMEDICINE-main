@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-<<<<<<< HEAD
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -58,7 +57,6 @@ const Navbar = () => {
   }, [location.pathname]);
 
   // Close notification panel on outside click
-=======
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -76,24 +74,19 @@ const Navbar = () => {
   const [unreadCount, setUnreadCount] = useState(2); // mock; replace with real state
   const panelRef = useRef(null);
 
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   useEffect(() => {
     const handler = (e) => {
       if (panelRef.current && !panelRef.current.contains(e.target)) {
         setNotifOpen(false);
       }
-<<<<<<< HEAD
       if (accountPanelRef.current && !accountPanelRef.current.contains(e.target)) {
         setMenuOpen(false);
       }
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     };
     document.addEventListener("pointerdown", handler);
     return () => document.removeEventListener("pointerdown", handler);
   }, []);
 
-<<<<<<< HEAD
   // Future: Real-time notification count (Socket.IO ready)
   useEffect(() => {
     if (role === "doctor") {
@@ -108,15 +101,12 @@ const Navbar = () => {
   const handleNavigate = (path) => {
     setMenuOpen(false);
     setMobileMenuOpen(false);
-=======
   const handleNavigate = (path) => {
     setMenuOpen(false);
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     navigate(path);
   };
 
   const handleLogout = () => {
-<<<<<<< HEAD
     setMenuOpen(false);
     setNotifOpen(false);
     setMobileMenuOpen(false);
@@ -442,7 +432,6 @@ const Navbar = () => {
   );
 };
 
-/* ================= KEYFRAME ANIMATIONS ================= */
 const keyframeStyles = `
   @keyframes pulse {
     0% { transform: scale(1); }
@@ -455,8 +444,6 @@ const keyframeStyles = `
   }
 `;
 
-/* ================= STYLES ================= */
-=======
     logout();
     navigate("/login");
   };
@@ -596,23 +583,19 @@ const keyframeStyles = `
 };
 
 /* Inline styles for the navbar component */
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 const navStyles = {
   bar: {
     position: "sticky",
     top: 0,
     zIndex: 1200,
-<<<<<<< HEAD
     background:
       "linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,231,255,0.95))",
     borderBottom: "1px solid rgba(139,92,246,0.08)",
     backdropFilter: "blur(6px)",
     transition: "box-shadow 0.3s ease",
-=======
     background: "linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,231,255,0.95))",
     borderBottom: "1px solid rgba(139,92,246,0.08)",
     backdropFilter: "blur(6px)",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   container: {
     maxWidth: 1400,
@@ -621,14 +604,12 @@ const navStyles = {
     alignItems: "center",
     justifyContent: "space-between",
     padding: "0.6rem 1rem",
-<<<<<<< HEAD
   },
   brand: {
     display: "flex",
     gap: 12,
     cursor: "pointer",
     alignItems: "center",
-=======
     gap: 12,
   },
   brand: {
@@ -636,13 +617,11 @@ const navStyles = {
     alignItems: "center",
     gap: 12,
     cursor: "pointer",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   gemIcon: {
     width: 44,
     height: 44,
     borderRadius: 8,
-<<<<<<< HEAD
     background: "linear-gradient(135deg,#8b5cf6,#a78bfa)",
     display: "flex",
     alignItems: "center",
@@ -650,7 +629,6 @@ const navStyles = {
     color: "#fff",
     fontSize: 20,
     fontWeight: 700,
-=======
     background: "linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)",
     display: "flex",
     alignItems: "center",
@@ -661,12 +639,10 @@ const navStyles = {
   },
   gemInner: {
     transform: "translateY(-2px)",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   appName: {
     fontWeight: 800,
     fontSize: 16,
-<<<<<<< HEAD
     background: "linear-gradient(135deg,#7c3aed,#a78bfa)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
@@ -695,7 +671,6 @@ const navStyles = {
     display: "flex",
     gap: 12,
     alignItems: "center",
-=======
     background: "linear-gradient(135deg, #7c3aed, #a78bfa)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
@@ -718,13 +693,11 @@ const navStyles = {
     display: "flex",
     alignItems: "center",
     gap: 10,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   aiButton: {
     background: "linear-gradient(135deg,#8b5cf6,#a78bfa)",
     color: "#fff",
     border: "none",
-<<<<<<< HEAD
     padding: "0.5rem 1rem",
     borderRadius: 10,
     fontWeight: 700,
@@ -745,7 +718,6 @@ const navStyles = {
     position: "absolute",
     top: 0,
     right: 0,
-=======
     padding: "0.5rem 0.9rem",
     borderRadius: 10,
     fontWeight: 700,
@@ -763,14 +735,12 @@ const navStyles = {
     position: "absolute",
     top: -6,
     right: -6,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     background: "#ef4444",
     color: "#fff",
     borderRadius: 999,
     padding: "2px 6px",
     fontSize: 11,
     fontWeight: 700,
-<<<<<<< HEAD
     animation: "pulse 1.5s infinite",
     minWidth: 18,
     textAlign: "center",
@@ -818,7 +788,6 @@ const navStyles = {
     height: 38,
     borderRadius: "50%",
     background: "linear-gradient(135deg, #8b5cf6, #a78bfa)",
-=======
   },
   notifWrap: { position: "relative" },
   notifPanel: {
@@ -862,24 +831,19 @@ const navStyles = {
     height: 36,
     borderRadius: 999,
     background: "#fafafa",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontWeight: 700,
-<<<<<<< HEAD
     color: "#fff",
     fontSize: 16,
     border: "2px solid rgba(139,92,246,0.2)",
-=======
     color: "#4c1d95",
     border: "1px solid rgba(74,20,140,0.06)",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   accountPanel: {
     position: "absolute",
     right: 0,
-<<<<<<< HEAD
     top: 50,
     background: "#fff",
     padding: 12,
@@ -1054,7 +1018,6 @@ const navStyles = {
 };
 
 export default Navbar;
-=======
     top: 46,
     width: 180,
     background: "#fff",
@@ -1120,4 +1083,3 @@ export default Navbar;
 };
 
 export default Navbar;
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

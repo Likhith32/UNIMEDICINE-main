@@ -1,7 +1,7 @@
 import json
 from pywebpush import webpush
 from flask import current_app
-from app.database import db
+from app.database.db import db
 from app.models.push_subscription import PushSubscription
 
 def send_push_to_user(user_id, title, body):

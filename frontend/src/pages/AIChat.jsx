@@ -253,24 +253,10 @@ const AIChat = () => {
               <div style={styles.emptyState}>
                 <p style={styles.emptyTitle}>Start with a short description.</p>
                 <ul style={styles.examplesList}>
-                  <li>
-<<<<<<< HEAD
-                    "I have a headache and body pain since yesterday, no fever yet."
-                  </li>
-                  <li>
-                    "I'm getting stomach pain after eating mess food for the last 2 days."
-                  </li>
+                  <li>"I have a headache and body pain since yesterday, no fever yet."</li>
+                  <li>"I'm getting stomach pain after eating mess food for the last 2 days."</li>
                   <li>"I feel tightness in my chest when climbing stairs."</li>
                   <li>"I have red rashes on my arm and they are itchy."</li>
-=======
-                    “I have a headache and body pain since yesterday, no fever yet.”
-                  </li>
-                  <li>
-                    “I’m getting stomach pain after eating mess food for the last 2 days.”
-                  </li>
-                  <li>“I feel tightness in my chest when climbing stairs.”</li>
-                  <li>“I have red rashes on my arm and they are itchy.”</li>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                 </ul>
                 <p style={styles.emptyHint}>
                   Mention when it started, where it hurts, how strong it is (1–10),
@@ -423,11 +409,7 @@ const AIChat = () => {
                 style={styles.input}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-<<<<<<< HEAD
                 placeholder='Describe your symptoms, e.g. "I have had a sore throat and mild fever for 2 days…"'
-=======
-                placeholder='Describe your symptoms, e.g. “I have had a sore throat and mild fever for 2 days…”'
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
               />
             </div>
             <button
@@ -530,20 +512,14 @@ const styles = {
     backgroundColor: "rgba(15,23,42,0.06)",
     border: "1px solid rgba(148,163,184,0.35)",
     backdropFilter: "blur(8px)",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   ribbonLeft: {
     display: "flex",
     flexDirection: "column",
     gap: "0.15rem",
-<<<<<<< HEAD
     flex: "1 1 auto",
     minWidth: "200px",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   ribbonPill: {
     display: "inline-flex",
@@ -555,10 +531,7 @@ const styles = {
     fontSize: "0.75rem",
     fontWeight: 600,
     color: "#1d4ed8",
-<<<<<<< HEAD
     width: "fit-content",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   pillDot: {
     width: "6px",
@@ -583,10 +556,7 @@ const styles = {
     backgroundColor: "#ecfeff",
     color: "#0e7490",
     border: "1px solid #a5f3fc",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   ribbonBadgeSecondary: {
     fontSize: "0.75rem",
@@ -595,10 +565,7 @@ const styles = {
     backgroundColor: "#fefce8",
     color: "#854d0e",
     border: "1px solid #facc15",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
 
   // Hero
@@ -613,17 +580,11 @@ const styles = {
       "linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.96))",
     boxShadow: "0 18px 45px rgba(15,23,42,0.18)",
     border: "1px solid rgba(148,163,184,0.4)",
-<<<<<<< HEAD
     flexWrap: "wrap",
   },
   heroTextBlock: {
     flex: "1 1 300px",
     minWidth: "280px",
-=======
-  },
-  heroTextBlock: {
-    flex: 1.1,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   heroGreeting: {
     margin: 0,
@@ -659,7 +620,6 @@ const styles = {
     backgroundColor: "#eff6ff",
     color: "#1d4ed8",
     border: "1px solid #bfdbfe",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
   },
 
@@ -670,16 +630,6 @@ const styles = {
     gap: "0.7rem",
     alignItems: "center",
     minWidth: "190px",
-=======
-  },
-
-  heroScene: {
-    flex: 0.9,
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.7rem",
-    alignItems: "flex-end",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
 
   mascotCard: {
@@ -782,10 +732,7 @@ const styles = {
     flexDirection: "column",
     gap: "0.35rem",
     alignItems: "flex-end",
-<<<<<<< HEAD
     width: "100%",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   heroBubbleUser: {
     alignSelf: "flex-start",
@@ -824,10 +771,7 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: "0.35rem",
-<<<<<<< HEAD
     alignSelf: "center",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   heroMiniDot: {
     width: "6px",
@@ -850,29 +794,20 @@ const styles = {
     alignItems: "center",
     marginBottom: "0.75rem",
     gap: "0.5rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   chatHeaderLeft: {
     display: "flex",
     alignItems: "center",
     gap: "0.6rem",
-<<<<<<< HEAD
     flex: "1 1 auto",
     minWidth: "200px",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   chatAvatarShell: {
     position: "relative",
     width: "42px",
     height: "42px",
-<<<<<<< HEAD
     flexShrink: 0,
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   chatAvatarIcon: {
     width: "100%",
@@ -906,10 +841,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "0.5rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   statusChipOnline: {
     display: "inline-flex",
@@ -921,10 +853,7 @@ const styles = {
     color: "#166534",
     fontSize: "0.75rem",
     border: "1px solid #bbf7d0",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   statusDot: {
     width: "7px",
@@ -940,10 +869,7 @@ const styles = {
     backgroundColor: "#f3f4f6",
     color: "#4b5563",
     cursor: "pointer",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
 
   infoStrip: {
@@ -954,10 +880,7 @@ const styles = {
   },
   infoStripBar: {
     width: "4px",
-<<<<<<< HEAD
     minWidth: "4px",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     height: "32px",
     borderRadius: "999px",
     backgroundImage: "linear-gradient(135deg, #f97316, #ef4444, #b91c1c)",
@@ -967,18 +890,11 @@ const styles = {
   infoStripText: {
     fontSize: "0.78rem",
     color: "#7f1d1d",
-<<<<<<< HEAD
     flex: 1,
   },
 
   chatBox: {
     position: "relative",
-=======
-  },
-
-  chatBox: {
-    position: "relative",         // important for overlay
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     borderRadius: "18px",
     border: "1px solid #e5e7eb",
     padding: "0.75rem",
@@ -995,11 +911,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     pointerEvents: "none",
-<<<<<<< HEAD
-=======
-    // if you want a slight veil inside the box, uncomment:
-    // backgroundColor: "rgba(249,250,251,0.6)",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   hrContainer: {
     background: "transparent",
@@ -1016,11 +927,7 @@ const styles = {
     position: "absolute",
     width: "100%",
     height: "100%",
-<<<<<<< HEAD
     backgroundColor: "#f9fafb",
-=======
-    backgroundColor: "#f9fafb", // same as chatBox bg
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     top: 0,
     right: 0,
     animation: "heartRateIn 2.5s linear infinite",
@@ -1029,11 +936,7 @@ const styles = {
     position: "absolute",
     width: "120%",
     height: "100%",
-<<<<<<< HEAD
     backgroundColor: "#f9fafb",
-=======
-    backgroundColor: "#f9fafb", // same as chatBox bg
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     top: 0,
     right: "-120%",
     animation: "heartRateOut 2.5s linear infinite",
@@ -1086,10 +989,7 @@ const styles = {
     justifyContent: "space-between",
     gap: "0.5rem",
     marginBottom: "0.15rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   messageLabel: {
     fontSize: "0.7rem",
@@ -1105,17 +1005,11 @@ const styles = {
   },
   avatarAI: {
     fontSize: "1.1rem",
-<<<<<<< HEAD
     flexShrink: 0,
   },
   avatarUser: {
     fontSize: "1.1rem",
     flexShrink: 0,
-=======
-  },
-  avatarUser: {
-    fontSize: "1.1rem",
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
 
   // OTC block
@@ -1196,10 +1090,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "0.3rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   typingDot: {
     display: "inline-block",
@@ -1217,17 +1108,11 @@ const styles = {
     alignItems: "center",
     gap: "0.6rem",
     marginTop: "0.75rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
   },
   inputWrapper: {
     flex: "1 1 200px",
     minWidth: "200px",
-=======
-  },
-  inputWrapper: {
-    flex: 1,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     backgroundColor: "#f9fafb",
     borderRadius: "999px",
     border: "1px solid #e5e7eb",
@@ -1250,10 +1135,7 @@ const styles = {
     color: "#fff",
     cursor: "pointer",
     boxShadow: "0 10px 24px rgba(79,70,229,0.4)",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   error: {
     marginTop: "0.4rem",
@@ -1267,30 +1149,19 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "flex-start",
     gap: "0.6rem",
-<<<<<<< HEAD
     flexWrap: "wrap",
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   disclaimer: {
     margin: 0,
     fontSize: "0.78rem",
     color: "#6b7280",
-<<<<<<< HEAD
     flex: "1 1 300px",
-=======
-    flex: 1.6,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   },
   tagRow: {
     display: "flex",
     flexDirection: "column",
     gap: "0.25rem",
-<<<<<<< HEAD
     flex: "0 1 auto",
-=======
-    flex: 0.8,
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     alignItems: "flex-end",
   },
   footerTag: {
@@ -1300,117 +1171,8 @@ const styles = {
     backgroundColor: "#f9fafb",
     border: "1px solid #e5e7eb",
     color: "#4b5563",
-<<<<<<< HEAD
     whiteSpace: "nowrap",
   },
 };
 
-// Add responsive media queries
-const responsiveStyles = `
-  /* Tablet styles (768px - 1024px) */
-  @media (max-width: 1024px) {
-    .ai-chat-page {
-      padding: 1rem 0.75rem;
-    }
-  }
-
-  /* Mobile styles (below 768px) */
-  @media (max-width: 768px) {
-    .ai-chat-page {
-      padding: 1rem 0.5rem;
-    }
-    
-    /* Hide some floating pills on mobile */
-    .floating-pill-4,
-    .floating-pill-5 {
-      display: none;
-    }
-    
-    /* Ribbon adjustments */
-    .ribbon-sub-text {
-      font-size: 0.7rem !important;
-    }
-    
-    /* Hero title smaller on mobile */
-    .hero-title-mobile {
-      font-size: 1.5rem !important;
-    }
-    
-    /* Hero subtitle smaller */
-    .hero-subtitle-mobile {
-      font-size: 0.85rem !important;
-    }
-    
-    /* Hero scene stacks vertically on mobile */
-    .hero-scene-mobile {
-      width: 100% !important;
-      align-items: center !important;
-    }
-    
-    /* Mascot card smaller on mobile */
-    .mascot-card-mobile {
-      width: 170px !important;
-    }
-    
-    /* Chat header subtitle smaller */
-    .chat-header-subtitle-mobile {
-      font-size: 0.75rem !important;
-    }
-    
-    /* Message bubbles wider on mobile */
-    .message-bubble-mobile {
-      max-width: 85% !important;
-    }
-    
-    /* Footer stacks on mobile */
-    .footer-tags-mobile {
-      align-items: flex-start !important;
-      width: 100%;
-    }
-  }
-
-  /* Small mobile (below 480px) */
-  @media (max-width: 480px) {
-    /* Hero title even smaller */
-    .hero-title-mobile {
-      font-size: 1.3rem !important;
-    }
-    
-    /* Hide ribbon right badges on very small screens */
-    .ribbon-badge-secondary-hide {
-      display: none !important;
-    }
-    
-    /* Chat box height adjustment */
-    .chat-box-mobile {
-      height: 200px !important;
-    }
-    
-    /* Input placeholder shorter on small mobile */
-    .input-mobile::placeholder {
-      font-size: 0.8rem !important;
-    }
-    
-    /* Send button smaller text */
-    .send-button-mobile {
-      padding: 0.5rem 1rem !important;
-      font-size: 0.85rem !important;
-    }
-  }
-`;
-
-// Inject responsive styles
-if (typeof document !== "undefined" && !document.getElementById("ai-chat-responsive-styles")) {
-  const styleSheet = document.createElement("style");
-  styleSheet.id = "ai-chat-responsive-styles";
-  styleSheet.textContent = responsiveStyles;
-  document.head.appendChild(styleSheet);
-}
-
 export default AIChat;
-=======
-  },
-};
-
-export default AIChat;
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

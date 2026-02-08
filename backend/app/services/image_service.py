@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # app/services/image_service.py
 
 """
@@ -10,12 +8,10 @@ Now integrated with the LLM:
 - The LLM (via ai_service) explains that prediction in student-friendly language.
 """
 
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 import os
 import logging
 from typing import Dict, Optional
 
-<<<<<<< HEAD
 from PIL import Image
 import google.generativeai as genai
 
@@ -73,7 +69,6 @@ def analyze_image(file_path: str, user_id: Optional[int] = None) -> Dict:
             "It is NOT a medical diagnosis. Please consult a doctor."
         ),
     }
-=======
 from app.services.ai_service import explain_image_prediction
 
 logger = logging.getLogger(__name__)
@@ -125,4 +120,3 @@ def analyze_image(file_path: str, user_id: Optional[int] = None) -> Dict:
     }
 
     return result
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213

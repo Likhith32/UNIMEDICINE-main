@@ -33,7 +33,6 @@ L.Icon.Default.mergeOptions({
   ).href,
 });
 
-<<<<<<< HEAD
 // Custom marker icons for different place types
 const hospitalIcon = new L.Icon({
   iconUrl: new URL("leaflet/dist/images/marker-icon.png", import.meta.url).href,
@@ -57,8 +56,6 @@ const medicalShopIcon = new L.Icon({
   className: "medical-shop-marker",
 });
 
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 // Campus center: JNTU-GV Vizianagaram
 const CAMPUS_CENTER = [18.1511, 83.3757];
 
@@ -135,9 +132,10 @@ const MapFocus = ({ place }) => {
   return null;
 };
 
-<<<<<<< HEAD
 // Map Legend Component
 const MapLegend = ({ isMobile }) => {
+  const styles = getResponsiveStyles(isMobile, false);
+  
   return (
     <div style={{
       ...styles.legend,
@@ -160,8 +158,6 @@ const MapLegend = ({ isMobile }) => {
   );
 };
 
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 const RADIUS_OPTIONS = [5, 10, 20]; // km options
 
 // soft bg animation like AIChat
@@ -171,7 +167,6 @@ const keyframeStyles = `
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 0%; }
   }
-<<<<<<< HEAD
 
   @keyframes pulseGlow {
     0%, 100% { box-shadow: 0 6px 16px rgba(99,102,241,0.25); }
@@ -185,8 +180,6 @@ const keyframeStyles = `
   .medical-shop-marker img {
     filter: hue-rotate(90deg) saturate(1.5);
   }
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 `;
 
 const NearbyPlaces = () => {
@@ -196,7 +189,6 @@ const NearbyPlaces = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
   const [locationError, setLocationError] = useState(null);
-<<<<<<< HEAD
   const [radiusKm, setRadiusKm] = useState(20); // Increased default radius to 20km
 
   // Responsive states
@@ -215,9 +207,6 @@ const NearbyPlaces = () => {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-=======
-  const [radiusKm, setRadiusKm] = useState(10);
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -242,20 +231,16 @@ const NearbyPlaces = () => {
 
   const hasRealPlaces = places && places.length > 0;
 
-<<<<<<< HEAD
   // Debug: Log backend places
   useEffect(() => {
     console.log("✅ Backend places loaded:", places?.length, places);
   }, [places]);
 
-=======
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
   const mapPlaces = useMemo(
     () => (hasRealPlaces ? places : DEMO_PLACES),
     [hasRealPlaces, places]
   );
 
-<<<<<<< HEAD
   // Dynamic map center: use user location if available, otherwise campus center
   const mapCenter = useMemo(() => {
     if (userLocation) {
@@ -280,19 +265,6 @@ const NearbyPlaces = () => {
         distanceKm: distanceKm(centerLat, centerLng, p.latitude, p.longitude),
       }));
   }, [mapPlaces, radiusKm, mapCenter]);
-=======
-  const visiblePlaces = useMemo(() => {
-    const [centerLat, centerLng] = CAMPUS_CENTER;
-
-    return mapPlaces.filter((p) => {
-      if (typeof p.latitude !== "number" || typeof p.longitude !== "number") {
-        return false;
-      }
-      const d = distanceKm(centerLat, centerLng, p.latitude, p.longitude);
-      return d <= radiusKm;
-    });
-  }, [mapPlaces, radiusKm]);
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
 
   const hospitals = visiblePlaces.filter(
     (p) => p.type === PLACE_TYPES.HOSPITAL
@@ -304,24 +276,18 @@ const NearbyPlaces = () => {
   const selectedPlace =
     visiblePlaces.find((p) => p.id === selectedId) || visiblePlaces[0] || null;
 
-<<<<<<< HEAD
   // UNIFIED CLICK LOGIC: Select + Open Directions
   const handlePlaceClick = (place) => {
     // Use stable ID for selection (fallback if id is undefined)
     const stableId = place.id || `${place.name}-${place.latitude}-${place.longitude}`;
     setSelectedId(stableId);
 
-=======
-  const handlePlaceClick = (place) => {
-    setSelectedId(place.id);
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
     if (place.latitude && place.longitude) {
       const url = buildDirectionsUrl(userLocation, place);
       window.open(url, "_blank");
     }
   };
 
-<<<<<<< HEAD
   const responsiveStyles = getResponsiveStyles(isMobile, isTablet);
 
   return (
@@ -334,27 +300,11 @@ const NearbyPlaces = () => {
           <div style={responsiveStyles.left}>
             <h2 style={responsiveStyles.heading}>Nearby Care Around Your Hostel</h2>
             <p style={responsiveStyles.tagline}>
-=======
-  return (
-    <div style={styles.page}>
-      <style>{keyframeStyles}</style>
-
-      <div style={styles.card}>
-        <div style={styles.layout}>
-          {/* LEFT: Info block */}
-          <div style={styles.left}>
-            <h2 style={styles.heading}>Nearby Care Around Your Hostel</h2>
-            <p style={styles.tagline}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
               Find hospitals and medical shops within a safe radius of your campus.
             </p>
 
             {studentProfile && (
-<<<<<<< HEAD
               <p style={responsiveStyles.studentInfo}>
-=======
-              <p style={styles.studentInfo}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                 <strong>{studentProfile.name}</strong> (
                 {studentProfile.level} –{" "}
                 {studentProfile.branch || studentProfile.department || "N/A"})
@@ -364,30 +314,17 @@ const NearbyPlaces = () => {
             )}
 
             {hostel && (
-<<<<<<< HEAD
               <p style={responsiveStyles.hostelInfo}>
-=======
-              <p style={styles.hostelInfo}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                 Showing locations around: <strong>{hostel}</strong>
               </p>
             )}
 
-<<<<<<< HEAD
             {loading && <p style={responsiveStyles.subtle}>Syncing locations…</p>}
             {error && <p style={responsiveStyles.error}>{error}</p>}
             {locationError && <p style={responsiveStyles.subtle}>{locationError}</p>}
 
             {!hasRealPlaces && !loading && !error && (
               <p style={responsiveStyles.subtle}>
-=======
-            {loading && <p style={styles.subtle}>Syncing locations…</p>}
-            {error && <p style={styles.error}>{error}</p>}
-            {locationError && <p style={styles.subtle}>{locationError}</p>}
-
-            {!hasRealPlaces && !loading && !error && (
-              <p style={styles.subtle}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                 No registered medical shops or hospitals found in the system for this hostel yet.
                 <br />
                 <strong>
@@ -396,7 +333,6 @@ const NearbyPlaces = () => {
               </p>
             )}
 
-<<<<<<< HEAD
             {/* Radius selector - Pill Style */}
             <div style={responsiveStyles.radiusSection}>
               <span style={responsiveStyles.radiusLabel}>
@@ -429,34 +365,6 @@ const NearbyPlaces = () => {
                 <span>healthcenter@jntugv.ac.in</span>
               </div>
               <div style={responsiveStyles.contactRow}>
-=======
-            {/* Radius selector */}
-            <div style={styles.radiusRow}>
-              <span style={styles.radiusLabel}>Search radius (from campus):</span>
-              <select
-                value={radiusKm}
-                onChange={(e) => setRadiusKm(Number(e.target.value))}
-                style={styles.radiusSelect}
-              >
-                {RADIUS_OPTIONS.map((r) => (
-                  <option key={r} value={r}>
-                    {r} km
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div style={styles.contactBlock}>
-              <div style={styles.contactRow}>
-                <span>📞</span>
-                <span>Campus Health Centre: 98765 43210</span>
-              </div>
-              <div style={styles.contactRow}>
-                <span>📧</span>
-                <span>healthcenter@jntugv.ac.in</span>
-              </div>
-              <div style={styles.contactRow}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                 <span>📍</span>
                 <span>JNTU-GV, Vizianagaram – 535003</span>
               </div>
@@ -464,11 +372,7 @@ const NearbyPlaces = () => {
 
             <button
               type="button"
-<<<<<<< HEAD
               style={responsiveStyles.ctaButton}
-=======
-              style={styles.ctaButton}
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
               onClick={() => {
                 const el = document.getElementById("places-list");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -478,7 +382,6 @@ const NearbyPlaces = () => {
             </button>
           </div>
 
-<<<<<<< HEAD
           {/* RIGHT: Map with Legend */}
           <div style={responsiveStyles.right}>
             <div style={responsiveStyles.mapContainer}>
@@ -573,114 +476,10 @@ const NearbyPlaces = () => {
               {/* Legend overlay */}
               <MapLegend isMobile={isMobile} />
             </div>
-=======
-          {/* RIGHT: Map */}
-          <div style={styles.right}>
-            <MapContainer
-              center={CAMPUS_CENTER}
-              zoom={14}
-              scrollWheelZoom={true}
-              style={styles.map}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-
-              {/* Campus radius circle with soft medical colors */}
-              <Circle
-                center={CAMPUS_CENTER}
-                radius={radiusKm * 1000}
-                pathOptions={{
-                  color: "#6366f1",          // outline
-                  weight: 2,
-                  fillColor: "#a5b4fc",      // light indigo fill
-                  fillOpacity: 0.18,
-                }}
-              />
-
-              {userLocation && (
-                <Marker position={[userLocation.lat, userLocation.lng]}>
-                  <Popup>You are here</Popup>
-                </Marker>
-              )}
-
-              {visiblePlaces
-                .filter(
-                  (p) =>
-                    typeof p.latitude === "number" &&
-                    typeof p.longitude === "number"
-                )
-                .map((place) => {
-                  const [centerLat, centerLng] = CAMPUS_CENTER;
-                  let distanceText = "";
-                  if (place.latitude && place.longitude) {
-                    const d = distanceKm(
-                      centerLat,
-                      centerLng,
-                      place.latitude,
-                      place.longitude
-                    );
-                    distanceText = `${d.toFixed(1)} km from campus`;
-                  }
-
-                  return (
-                    <Marker
-                      key={place.id}
-                      position={[place.latitude, place.longitude]}
-                      eventHandlers={{
-                        click: () => handlePlaceClick(place),
-                      }}
-                    >
-                      <Popup>
-                        <strong>{place.name}</strong>
-                        <br />
-                        {place.type === PLACE_TYPES.HOSPITAL
-                          ? "Hospital / Clinic"
-                          : "Medical Shop"}
-                        {place.address && (
-                          <>
-                            <br />
-                            {place.address}
-                          </>
-                        )}
-                        {distanceText && (
-                          <>
-                            <br />
-                            📏 {distanceText}
-                          </>
-                        )}
-                        {place.phone && (
-                          <>
-                            <br />
-                            📞 {place.phone}
-                          </>
-                        )}
-                        {place.latitude && place.longitude && (
-                          <>
-                            <br />
-                            <a
-                              href={buildDirectionsUrl(userLocation, place)}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              ▶ Get Directions
-                            </a>
-                          </>
-                        )}
-                      </Popup>
-                    </Marker>
-                  );
-                })}
-
-              <MapFocus place={selectedPlace} />
-            </MapContainer>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
           </div>
         </div>
 
         {/* List under the main row */}
-<<<<<<< HEAD
         <div id="places-list" style={responsiveStyles.listWrapper}>
           <h3 style={responsiveStyles.listTitle}>
             Nearby Hospitals & Medical Shops (within {radiusKm} km of your location)
@@ -730,45 +529,6 @@ const NearbyPlaces = () => {
                       >
                         Get Directions →
                       </button>
-=======
-        <div id="places-list" style={styles.listWrapper}>
-          <h3 style={styles.listTitle}>
-            Nearby Hospitals & Medical Shops (within {radiusKm} km of campus)
-          </h3>
-          <div style={styles.listGrid}>
-            <div>
-              <h4 style={styles.sectionTitle}>Hospitals / Clinics</h4>
-              {hospitals.length === 0 && (
-                <p style={styles.subtle}>No hospitals available.</p>
-              )}
-              <ul style={styles.list}>
-                {hospitals.map((p) => {
-                  const [centerLat, centerLng] = CAMPUS_CENTER;
-                  let distanceText = "";
-                  if (p.latitude && p.longitude) {
-                    const d = distanceKm(
-                      centerLat,
-                      centerLng,
-                      p.latitude,
-                      p.longitude
-                    );
-                    distanceText = `${d.toFixed(1)} km from campus`;
-                  }
-
-                  return (
-                    <li
-                      key={p.id}
-                      style={styles.listItem}
-                      onClick={() => handlePlaceClick(p)}
-                    >
-                      <strong>{p.name}</strong>
-                      {p.address && (
-                        <div style={styles.listDetail}>{p.address}</div>
-                      )}
-                      {distanceText && (
-                        <div style={styles.listDistance}>{distanceText}</div>
-                      )}
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                     </li>
                   );
                 })}
@@ -776,7 +536,6 @@ const NearbyPlaces = () => {
             </div>
 
             <div>
-<<<<<<< HEAD
               <h4 style={responsiveStyles.sectionTitle}>💊 Medical Shops / Pharmacies</h4>
               {medicalShops.length === 0 && (
                 <p style={responsiveStyles.subtle}>No medical shops available.</p>
@@ -820,39 +579,6 @@ const NearbyPlaces = () => {
                       >
                         Get Directions →
                       </button>
-=======
-              <h4 style={styles.sectionTitle}>Medical Shops / Pharmacies</h4>
-              {medicalShops.length === 0 && (
-                <p style={styles.subtle}>No medical shops available.</p>
-              )}
-              <ul style={styles.list}>
-                {medicalShops.map((p) => {
-                  const [centerLat, centerLng] = CAMPUS_CENTER;
-                  let distanceText = "";
-                  if (p.latitude && p.longitude) {
-                    const d = distanceKm(
-                      centerLat,
-                      centerLng,
-                      p.latitude,
-                      p.longitude
-                    );
-                    distanceText = `${d.toFixed(1)} km from campus`;
-                  }
-
-                  return (
-                    <li
-                      key={p.id}
-                      style={styles.listItem}
-                      onClick={() => handlePlaceClick(p)}
-                    >
-                      <strong>{p.name}</strong>
-                      {p.address && (
-                        <div style={styles.listDetail}>{p.address}</div>
-                      )}
-                      {distanceText && (
-                        <div style={styles.listDistance}>{distanceText}</div>
-                      )}
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
                     </li>
                   );
                 })}
@@ -860,11 +586,7 @@ const NearbyPlaces = () => {
             </div>
           </div>
 
-<<<<<<< HEAD
           <p style={responsiveStyles.footerNote}>
-=======
-          <p style={styles.footerNote}>
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
             ℹ️ Markers on the map are either actual places from the telemedicine
             system or demo locations around JNTU-GV Vizianagaram for preview.
             For real emergencies, always contact official campus authorities.
@@ -875,9 +597,8 @@ const NearbyPlaces = () => {
   );
 };
 
-<<<<<<< HEAD
 const getResponsiveStyles = (isMobile, isTablet) => {
-  const styles = {
+  return {
     page: {
       minHeight: "100vh",
       display: "flex",
@@ -1163,193 +884,6 @@ const getResponsiveStyles = (isMobile, isTablet) => {
       color: "#6b7280",
     },
   };
-
-  return styles;
-};
-
-const styles = {
-  legend: {},
-  legendTitle: {},
-  legendItem: {},
-  legendDot: {},
-  legendText: {},
 };
 
 export default NearbyPlaces;
-=======
-const styles = {
-  page: {
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "1.5rem 1rem",
-    backgroundImage:
-      "radial-gradient(circle at top, #e0f2fe 0, #fdf2ff 40%, #fef9c3 100%)",
-    backgroundSize: "140% 140%",
-    animation: "bgGradientShift 22s ease-in-out infinite",
-  },
-  card: {
-    width: "100%",
-    maxWidth: "1100px",
-    background:
-      "linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.96))",
-    borderRadius: "24px",
-    boxShadow: "0 20px 50px rgba(15,23,42,0.22)",
-    padding: "1.6rem 1.6rem 1.4rem",
-    boxSizing: "border-box",
-    border: "1px solid rgba(148,163,184,0.4)",
-    backdropFilter: "blur(10px)",
-  },
-  layout: {
-    display: "grid",
-    gridTemplateColumns: "1.1fr 1.2fr",
-    gap: "1.5rem",
-    alignItems: "stretch",
-  },
-  left: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    gap: "0.75rem",
-  },
-  right: {
-    borderRadius: "18px",
-    overflow: "hidden",
-    border: "1px solid #e5e7eb",
-    boxShadow: "0 12px 30px rgba(15,23,42,0.18)",
-  },
-  map: {
-    width: "100%",
-    height: "360px",
-  },
-  heading: {
-    margin: 0,
-    fontSize: "1.9rem",
-    fontWeight: 800,
-    color: "#0f172a",
-  },
-  tagline: {
-    margin: 0,
-    fontSize: "0.95rem",
-    color: "#4b5563",
-  },
-  studentInfo: {
-    margin: 0,
-    fontSize: "0.9rem",
-    color: "#111827",
-  },
-  hostelInfo: {
-    margin: 0,
-    fontSize: "0.9rem",
-    color: "#4b5563",
-  },
-  subtle: {
-    margin: 0,
-    fontSize: "0.85rem",
-    color: "#6b7280",
-  },
-  error: {
-    color: "#b91c1c",
-    fontSize: "0.85rem",
-  },
-  contactBlock: {
-    marginTop: "0.5rem",
-    paddingTop: "0.5rem",
-    borderTop: "1px solid #e5e7eb",
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.3rem",
-    fontSize: "0.9rem",
-    color: "#374151",
-  },
-  contactRow: {
-    display: "flex",
-    alignItems: "center",
-    gap: "0.4rem",
-  },
-  ctaButton: {
-    marginTop: "0.8rem",
-    alignSelf: "flex-start",
-    padding: "0.6rem 1.2rem",
-    borderRadius: "999px",
-    border: "none",
-    background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-    color: "#fff",
-    fontSize: "0.85rem",
-    fontWeight: 600,
-    cursor: "pointer",
-    boxShadow: "0 10px 24px rgba(79,70,229,0.4)",
-  },
-  radiusRow: {
-    marginTop: "0.5rem",
-    display: "flex",
-    alignItems: "center",
-    gap: "0.5rem",
-    fontSize: "0.9rem",
-  },
-  radiusLabel: {
-    color: "#374151",
-  },
-  radiusSelect: {
-    padding: "0.25rem 0.6rem",
-    borderRadius: "999px",
-    border: "1px solid #cbd5f5",
-    fontSize: "0.85rem",
-    backgroundColor: "#eff6ff",
-    color: "#1d4ed8",
-  },
-  listWrapper: {
-    marginTop: "1.25rem",
-  },
-  listTitle: {
-    margin: 0,
-    marginBottom: "0.5rem",
-    fontSize: "1.1rem",
-    color: "#0f172a",
-  },
-  listGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "1rem",
-  },
-  sectionTitle: {
-    marginTop: 0,
-    marginBottom: "0.35rem",
-    fontSize: "0.95rem",
-    color: "#0f172a",
-  },
-  list: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.4rem",
-  },
-  listItem: {
-    borderRadius: "10px",
-    border: "1px solid #e5e7eb",
-    padding: "0.4rem 0.6rem",
-    fontSize: "0.85rem",
-    cursor: "pointer",
-    backgroundColor: "#ffffff",
-    transition: "background-color 0.2s, border-color 0.2s, box-shadow 0.2s",
-  },
-  listDetail: {
-    fontSize: "0.8rem",
-    color: "#6b7280",
-  },
-  listDistance: {
-    fontSize: "0.78rem",
-    color: "#4b5563",
-  },
-  footerNote: {
-    marginTop: "0.75rem",
-    fontSize: "0.8rem",
-    color: "#6b7280",
-  },
-};
-
-export default NearbyPlaces;
->>>>>>> e91794198ec50c0185b8688c9c06d9102541e213
